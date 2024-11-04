@@ -17,8 +17,67 @@ export const createRide = async (req, res) => {
         res.status(500).json({ message: "Erreur lors de la création du trajet." });
     }
 }
+// updateRide
+
+export const updateRide = async (req, res) => {
+    try {
+        const { origin, destination, date, carId } = req.body; // Récupérer les données du corps de la requête
+
+        // Vérifier si le trajet existe et appartient à l'utilisateur
+        const updated = await prisma.ride.update({
+            where: {
+                id: req.params.id,
+                userId: req.user.id, // Vérifier si l'utilisateur est le propriétaire du trajet
+            },
+            data: {
+                origin: origin,         
+                destination: destination, 
+                date: date,             
+                carId: carId,           
+                
+            },
+        });
+
+        res.json({ data: updated });
+    } catch (error) {
+        console.error(error);
+        return res.status(404).json({ message: "Trajet non trouvé ou vous n'avez pas accès à cette voiture." });
+    }
+};
 
 
+/*
+
+export const updateRide = async (req, res) => {
+    try {
+        const { origin, destination, date, carId } = req.body;
+
+        // Vérifier si le trajet existe et appartient à l'utilisateur
+        const updated = await prisma.ride.update({
+            where: {
+                id: req.params.id,
+                userId: req.user.id,
+            },
+            data: {
+                origin,
+                destination,
+                date,
+                carId,
+            },
+        });
+
+        res.json({ data: updated });
+    } catch (error) {
+        console.error("Erreur lors de la mise à jour du trajet :", error); // Ajoutez cette ligne pour afficher l'erreur
+        return res.status(404).json({ message: "Erreur lors de la mise à jour du trajet." });
+    }
+};
+
+
+*/
+
+
+//getallRides
 
 export const getallRides = async (req, res) => {
     try {
