@@ -3,7 +3,7 @@ import { body, validationResult } from 'express-validator';
 
 import { handleEroorInput, validateBookingInput, validateCarInput, validateRideInputt } from "../modules/middlewars.js";
 import { createCar, deleteCar, getallCars, getCar, updateCar } from "../handlers/Cars.js";
-import { createRide,getallRides } from "../handlers/Ride.js";
+import { createRide,getallRides ,updateRide} from "../handlers/Ride.js";
 const router = Router();
 //Car
 router.get("/",(req,res)=>{
@@ -32,26 +32,13 @@ router.delete("/car/:id", deleteCar);
 router.get("/ride",getallRides)
 
 router.post ('/ride',createRide,validateRideInputt,handleEroorInput)
-router.put("/ride:/id",validateRideInputt,handleEroorInput)
+//router.put('/ride:/id',updateRide,validateRideInputt,handleEroorInput)
+router.put('/ride/:id', updateRide);
 
 
 
 //Booking
-router.get("/booking",(req,res)=>{
 
-})
-router.get("/booking/:id",(req,res)=>{
-
-})
-
-router.post("/booking",validateBookingInput,handleEroorInput,(req,res)=>{
-
-})
-router.delete("/booking",(req,res)=>{
-
-})
-router.put("/booking/:id",  validateBookingInput,
-handleEroorInput)
 
 
 export default router;
