@@ -7,7 +7,7 @@ export const createRide = async (req, res) => {
                 origin,
                 destination,
                 date,
-                carId,
+                carId, //afin de specifier la voiture qui va effectuer le trajet
                 userId: req.user.id
             }
         });
@@ -20,6 +20,20 @@ export const createRide = async (req, res) => {
 
 
 
-
+export const getallRides = async (req, res) => {
+    try {
+        const rides = await prisma.ride.findMany({
+            include: {
+                car: true,
+                user: true,
+                bookings: true,
+              },
+    });
+        res.json({ data: rides });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: "Erreur lors de la récupération des trajets." });
+    }
+}
 
 
