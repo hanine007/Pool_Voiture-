@@ -10,10 +10,11 @@ export const comparePassword =  (password,hashedPassword)=>{ // fonction pour co
 }
 
 
-export const hashPassword = async (password)=>{ // fonction pour hasher le mot de passe
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(password,salt);
-    return hashedPassword;
+export const hashPassword =  (password)=>{ // fonction pour hasher le mot de passe
+    if (!password) {
+        throw new Error("Password is required for hashing.");
+      }
+    return bcrypt.hashSync(password,10);
 }
 
 export  const Creatjwt = (user)=>{ // fonction pour créer le token
@@ -30,12 +31,12 @@ if(!bearer){
 const [,token] = bearer.split(' ');// extrait le token du bearer juste le token l'autre partie est ignorée
 if(!token){
     res.status(401)
-    res.json ({message:"Unauthorized"});
+    res.json ({message:"Unauthorized fALSE"});
     return;
 }
 try{
 const decoded = jwt.verify(token,process.env.SECRET_KEY) // vérifie le token
-req.user=decoded;
+req.user=decoded; // ajoute l'utilisateur décodé à la requête 
 console.log(decoded); 
 
 next();
@@ -43,7 +44,7 @@ next();
 }catch(err){
     console.error(err)
     res.status(401)
-    res.json ({message:"Unauthorized"});
+    res.json ({message:"Invalid token"});
     return;
 
 
