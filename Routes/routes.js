@@ -4,6 +4,7 @@ import { body, validationResult } from 'express-validator';
 import { handleEroorInput, validateBookingInput, validateCarInput, validateRideInputt } from "../modules/middlewars.js";
 import { createCar, deleteCar, getallCars, getCar, updateCar } from "../handlers/Cars.js";
 import { createRide,getallRides ,updateRide} from "../handlers/Ride.js";
+import { Booking } from "../handlers/Booking.js";
 const router = Router();
 //Car
 router.get("/",(req,res)=>{
@@ -38,7 +39,7 @@ router.put('/ride/:id', updateRide);
 
 
 //Booking
-
+router.post('/booking',Booking)
 
 
 export default router;
