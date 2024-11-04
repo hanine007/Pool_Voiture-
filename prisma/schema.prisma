@@ -30,7 +30,7 @@ model Car {
   model String @db.VarChar(255)
   year  Int
 
-  seats    Int?
+  seats    Int
   ownerId  String
   owner    User    @relation(fields: [ownerId], references: [id])
   rides    Ride[]
