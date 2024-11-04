@@ -68,6 +68,7 @@ export const createCar = async (req, res) => {
 
     const car = await prisma.car.create({
         data: {
+            seats : req.body.seats,
             model : req.body.model,
             make : req.body.make,
             year : req.body.year,
@@ -83,7 +84,7 @@ export const createCar = async (req, res) => {
 // Update car
 export const updateCar = async (req, res) => {
     try {
-        const { model, make, year, isActive } = req.body;
+        const { model, make, year, isActive,seats } = req.body;
 
 
         const updated = await prisma.car.update({
@@ -92,7 +93,7 @@ export const updateCar = async (req, res) => {
                 ownerId: req.user.id
             },
             data: {
-                
+                seats,
                 model,
                 make,
                 year,
