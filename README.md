@@ -10,6 +10,7 @@
 ![Express Validator](https://img.shields.io/badge/Express%20Validator-Validation-green)
 ![JWT](https://img.shields.io/badge/JWT-Authentication-yellowgreen)
 ![Bcrypt](https://img.shields.io/badge/Bcrypt-Password%20Hashing-yellow)
+![Docker](https://img.shields.io/badge/Docker-Containerization-blue)
 
 
 
@@ -48,7 +49,7 @@ Liste des technologies et des outils utilisés dans le projet:
 - Bcrypt
 - Prisma
 - Express validator
-
+- Docker
 
 
 ## Setup
