@@ -1,7 +1,8 @@
 import prisma from "../db.js";
 export const Booking= async (req, res) => {
     try {
-      const { rideId, userId } = req.body;
+      const { rideId } = req.body;
+      const userId = req.user.id;  
   
       // Vérifiez la disponibilité du trajet avec la voiture associée
       const ride = await prisma.ride.findUnique({
