@@ -21,7 +21,7 @@
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Usage](#usage)
- - [Jwt] (#jwt)
+ - [Jwt] (#Jwt)
 - [Database](#database)
 - [Description API](#description-api)
 - [License](#license)
@@ -388,7 +388,7 @@ Toutes les routes de cette API nécessitent un en-tête d'authentification. Ajou
   }
   ```
 -  **Explication**rideId : ID du trajet à réserver.
-- érifie si le trajet existe et s'il est associé à une voiture.
+- Vérifie si le trajet existe et s'il est associé à une voiture.
 - Vérifie que la voiture associée n'est pas active (condition requise pour accepter la réservation).
 - Compte le nombre de réservations existantes pour le trajet.
 - Si des places sont disponibles :
