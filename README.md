@@ -21,7 +21,7 @@
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Usage](#usage)
-- [Jwt] (#Jwt)
+- [Jwt](#jwt)
 - [Database](#database)
 - [Description API](#description-api)
 - [License](#license)
@@ -88,8 +88,7 @@ Créez un fichier .env et configurez les variables d'environnement pour vous con
 ```bash
 $ DATABASE_URL=postgresql://username:password@localhost:5432/carpooldb
 ```
-
-## Jwt
+## jwt
  
 Créer une clé secrète pour l'authentification JWT dans le fichier .env.
 
