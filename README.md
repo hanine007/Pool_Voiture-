@@ -25,6 +25,7 @@
 - [Jwt](#jwt)
 - [Database](#database)
 - [Description API](#description-api)
+- [Docker](#docker)
 - [License](#license)
 
 
@@ -438,3 +439,8 @@ La réservation est placée en attente avec l'état PENDING
   "message": "La voiture est active"
 }
 ```
+### Docker 
+```bash
+   $ docker-compose up --build 
+  
+   ```
