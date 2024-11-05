@@ -91,6 +91,11 @@ Créez un fichier .env et configurez les variables d'environnement pour vous con
 ```bash
 $ DATABASE_URL=postgresql://username:password@localhost:5432/carpooldb
 ```
+```bash
+$ npx prisma studio
+```
+Pour visualiser les different table 
+
 ## jwt
  
 Créer une clé secrète pour l'authentification JWT dans le fichier .env. et sécuriser les fonctionnalite 
