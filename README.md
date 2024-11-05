@@ -440,6 +440,7 @@ La réservation est placée en attente avec l'état PENDING
 }
 ```
 ### Docker 
+1. Executer sur Docker  
 ```bash
    $ docker-compose up --build 
   
