@@ -72,6 +72,9 @@ Liste des technologies et des outils utilisés dans le projet:
    ```bash
    $ npm install
    ```
+    ```bash
+   $ npm install nodemon
+   ```
 ## Usage
 1. Start the Servers
 ```bash
