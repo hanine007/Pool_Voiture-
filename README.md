@@ -90,7 +90,7 @@ $ DATABASE_URL=postgresql://username:password@localhost:5432/carpooldb
 ```
 ## jwt
  
-Créer une clé secrète pour l'authentification JWT dans le fichier .env.
+Créer une clé secrète pour l'authentification JWT dans le fichier .env. et sécuriser les fonctionnalite 
 
 ## Description API
 ### User
