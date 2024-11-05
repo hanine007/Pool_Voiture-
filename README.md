@@ -21,6 +21,7 @@
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Usage](#usage)
+ - [Jwt] (#jwt)
 - [Database](#database)
 - [Description API](#description-api)
 - [License](#license)
@@ -83,7 +84,8 @@ Create an .env file and configure the environment variables to connect to your P
 ```bash
 $ DATABASE_URL=postgresql://username:password@localhost:5432/carpooldb
 ```
-
+## Jwt
+Create a secret key for JWT authentication in the .env file.
 ## Description API
 #### 1. Creat a user 
 - **URL** : `/user`
@@ -98,6 +100,20 @@ $ DATABASE_URL=postgresql://username:password@localhost:5432/carpooldb
     "username": "nom_utilisateur",
     "password": "mot_de_passe",
     "type": "type_utilisateur"
+  }
+- **Response Success**:
+ ```json
+  {
+    {
+  "token": "",
+  "data": {
+    "id": "6df1859c-4b6a-4f12-8e9e-61cf9db8b10f",
+    "createdAt": "2024-11-05T08:55:07.402Z",
+    "username": "hanineza",
+    "password": "$2b$10$JWowpeyYA9L9iaKjlVEmN.SF5ya2sPtdHW2lcUCLWedUXfpg5ystG",
+    "type": " DRIVER"
+  }
+}
   }
 
 
