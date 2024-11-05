@@ -1,6 +1,6 @@
 import prisma from "../db.js";
 export const createRide = async (req, res) => {
-    const { origin, destination, date, time, carId } = req.body;
+    const { origin, destination, date,  carId } = req.body;
     try {
         const ride = await prisma.ride.create({
             data: {
