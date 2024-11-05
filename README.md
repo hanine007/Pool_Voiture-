@@ -21,7 +21,7 @@
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Usage](#usage)
- - [Jwt] (#Jwt)
+- [Jwt] (#Jwt)
 - [Database](#database)
 - [Description API](#description-api)
 - [License](#license)
