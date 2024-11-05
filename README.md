@@ -87,7 +87,7 @@ $ npm run start
 
 ## Database
 
-Créez un fichier .env et configurez les variables d'environnement pour vous connecter à votre base de données PostgreSQL.
+Créez un fichier .env et configurez les variables d'environnement pour vous connecter à votre base de données PostgreSQL. Selon la template choisi Local ou bien docker 
 ```bash
 $ DATABASE_URL=postgresql://username:password@localhost:5432/carpooldb
 ```
@@ -155,7 +155,6 @@ Créer une clé secrète pour l'authentification JWT dans le fichier .env. et s�
   }
 ```
 ### Authentification
-
 Toutes les routes de cette API nécessitent un en-tête d'authentification. Ajoutez le token dans l'en-tête `Authorization` sous la forme suivante :
 ### Car
 #### 1. Touts les cars assigner vers ce user 
