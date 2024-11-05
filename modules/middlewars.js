@@ -39,7 +39,4 @@ const errors = validationResult(req);
               .isISO8601()
               .withMessage("La date doit être au format ISO8601 (YYYY-MM-DD).")
           ]
-         export const validateBookingInput = [  body('status')
-            .isIn(['PENDING', 'ACCEPTED', 'REJECTED'])
-            .withMessage("Le champ 'status' doit être l'un des suivants : PENDING, ACCEPTED, REJECTED."),
-        ]
+         
