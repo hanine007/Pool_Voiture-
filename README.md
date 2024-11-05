@@ -5,14 +5,12 @@
 ![Prisma](https://img.shields.io/badge/Prisma-ORM-yellow)
 ![CORS](https://img.shields.io/badge/CORS-Security-yellow)
 ![Morgan](https://img.shields.io/badge/Morgan-Logging-orange)
-![React](https://img.shields.io/badge/React-Frontend-blue)
 ![Body-Parser](https://img.shields.io/badge/Body--Parser-Middleware-lightgrey)
 ![Thunder Client](https://img.shields.io/badge/Thunder%20Client-API%20Testing-orange)
 ![Express Validator](https://img.shields.io/badge/Express%20Validator-Validation-green)
 ![JWT](https://img.shields.io/badge/JWT-Authentication-yellowgreen)
 ![Bcrypt](https://img.shields.io/badge/Bcrypt-Password%20Hashing-yellow)
 
-# Store_Project 
 
 
 ## Table of Contents
@@ -23,16 +21,13 @@
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Usage](#usage)
-  - [Local](#local)
-  
-
 - [Database](#database)
-- 
-- [Logging](#logging)
+- [Description API](#description-api)
 - [License](#license)
 
 
 ## Introduction
+ Carpooling application that allows users to create accounts, add cars, suggest journeys and reserve seats. 
 
 
 ## Technologies Used
@@ -43,6 +38,10 @@ List of technologies and tools used in the project:
 - Express.js
 - CORS
 - Morgan
+- JWT
+- Bcrypt
+- Prisma
+- Express validator
 
 
 
@@ -79,7 +78,27 @@ $ npm run start
 
 ## Database
 
+Create an .env file and configure the environment variables to connect to your PostgreSQL database.
 
+```bash
+$ DATABASE_URL=postgresql://username:password@localhost:5432/carpooldb
+```
+
+## Description API
+#### 1. Creat a user 
+- **URL** : `/user`
+- **Méthode** : `POST`
+- **Description** : Create new users with username, password and user type.
+- Connect users with username and password verification.
+- Generation of JWT tokens for secure authentication.
+
+- **Request Body** :
+  ```json
+  {
+    "username": "nom_utilisateur",
+    "password": "mot_de_passe",
+    "type": "type_utilisateur"
+  }
 
 
 ## License
