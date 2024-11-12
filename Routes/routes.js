@@ -16,9 +16,9 @@ router.get("/car/:id",getCar)
 
 
 
-router.put ("/car/:id",updateCar,validateCarInput, handleEroorInput )
+router.put ("/car/:id",validateCarInput, handleEroorInput,updateCar )
 
-router.post("/car",createCar,validateCarInput, handleEroorInput)
+router.post("/car",validateCarInput, handleEroorInput,createCar)
 
 
 
@@ -31,8 +31,8 @@ router.delete("/car/:id", deleteCar);
 // Ride
 router.get("/ride",getallRides)
 
-router.post ('/ride',createRide,validateRideInputt,handleEroorInput)
-router.put('/ride/:id', updateRide);
+router.post ('/ride',validateRideInputt,handleEroorInput,createRide)
+router.put('/ride/:id', validateRideInputt,handleEroorInput, updateRide);
 
 
 
