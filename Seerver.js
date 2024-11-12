@@ -10,6 +10,7 @@ import { creatUser, signin } from './handlers/User.js';
 const app = express();
 app.use (cors());
 app.use(morgan('dev'));
+app.use(express.json());
 app.use (urlencoded({extended:true}));
 app.use(bodyParser.json()); 
 
