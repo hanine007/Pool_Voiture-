@@ -9,12 +9,10 @@ export const getallCars = async (req, res) => {
                 cars: true // Inclure les voitures associées
             }
         });
-
         // Vérifier si l'utilisateur existe
         if (!user) {
             return res.status(404).json({ message: "Utilisateur non trouvé, pas de voitures associées." });
         }
-
         // Retourner les voitures de l'utilisateur
         res.json({ data: user.cars }); 
     } catch (err) {
@@ -22,12 +20,6 @@ export const getallCars = async (req, res) => {
         res.status(500).json({ message: "Erreur lors de la récupération des voitures." });
     }
 };
-
-
-
-
-
-
 
 export const getCar = async (req, res) => {
     try {
@@ -117,8 +109,7 @@ export const deleteCar = async (req, res) => {
                 id: req.params.id,
                 ownerId: req.user.id
             }
-        });
-        
+        }); 
         res.json({ data: deleted });
     } catch (error) {
         console.error(error);

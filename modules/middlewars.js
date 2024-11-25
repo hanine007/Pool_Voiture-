@@ -1,8 +1,7 @@
 import {validationResult,body,check} from "express-validator";
 
-export const handleEroorInput =async (req,res,next)=>{
-
-
+export const handleEroorInput = async (req,res,next)=>{
+  
 const errors = validationResult(req);
         if (!errors.isEmpty()){
                return res.status(400).json({ errors: errors.array() });
@@ -11,7 +10,6 @@ const errors = validationResult(req);
             next ();
            }
         }
-
          export const validateCarInput = [
             check("model")
         .isLength({ min: 3 })
@@ -34,9 +32,9 @@ const errors = validationResult(req);
             body("destination")
               .isString()
               .withMessage("Veuillez fournir un nom valide"),
-            body("DateTime")
-            .isInt({ min: 1990, max: 2025 })
-              .isISO8601()
+            body("date")
+            //.isInt({ min: 1990, max: 2025 })
+            .isISO8601()
               .withMessage("La date doit être au format ISO8601 (YYYY-MM-DD).")
           ]
          

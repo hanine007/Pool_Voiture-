@@ -8,17 +8,11 @@ export const creatUser =async(req,res)=>{
         password: hashPassword(req.body.password),
         type:req.body.type
     }
-
    })
-  
-
-   
    const token = Creatjwt(user)
     res.json({token :token,
         data: user,
-        
     },)
-
 }
 export const signin = async (req,res )=>{
  const user = await prisma.user.findUnique({

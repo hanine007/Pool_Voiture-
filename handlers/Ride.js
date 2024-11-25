@@ -1,6 +1,7 @@
 import prisma from "../db.js";
+
 export const createRide = async (req, res) => {
-    const { origin, destination, date,  carId } = req.body;
+    const { origin, destination, date,  carId } = req.body  ;
     try {
         const ride = await prisma.ride.create({
             data: {
@@ -33,8 +34,7 @@ export const updateRide = async (req, res) => {
                 origin: origin,         
                 destination: destination, 
                 date: date,             
-                carId: carId,           
-                
+                carId: carId,                
             },
         });
 

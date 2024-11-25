@@ -25,12 +25,11 @@ model User {
 }
 
 model Car {
-  id    String @id @default(uuid())
-  make  String @db.VarChar(255)
-  model String @db.VarChar(255)
-  year  Int
-
-  seats    Int
+  id       String  @id @default(uuid())
+  make     String  @db.VarChar(255)
+  model    String  @db.VarChar(255)
+  year     Int
+  seats    Int?
   ownerId  String
   owner    User    @relation(fields: [ownerId], references: [id])
   rides    Ride[]
@@ -57,12 +56,11 @@ enum BookingStatus {
 }
 
 model Booking {
-  id        String   @id @default(uuid())
-  createdAt DateTime @default(now())
-
-  user   User          @relation(fields: [userId], references: [id])
-  userId String
-  ride   Ride          @relation(fields: [rideId], references: [id])
-  rideId String
-  status BookingStatus @default(PENDING)
+  id        String        @id @default(uuid())
+  createdAt DateTime      @default(now())
+  user      User          @relation(fields: [userId], references: [id])
+  userId    String
+  ride      Ride          @relation(fields: [rideId], references: [id])
+  rideId    String
+  status    BookingStatus @default(PENDING)
 }

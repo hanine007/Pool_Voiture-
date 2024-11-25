@@ -14,19 +14,11 @@ router.get("/car",getallCars)
 
 router.get("/car/:id",getCar)
 
-
-
 router.put ("/car/:id",validateCarInput, handleEroorInput,updateCar )
 
 router.post("/car",validateCarInput, handleEroorInput,createCar)
 
-
-
 router.delete("/car/:id", deleteCar);
-
-
-
-
 
 // Ride
 router.get("/ride",getallRides)
